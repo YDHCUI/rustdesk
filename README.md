@@ -21,7 +21,7 @@
 
 -t ID服务器监听地址，默认0.0.0.0:21116
 
--t 中继服务器监听地址，默认0.0.0.0:21117
+-u 中继服务器监听地址，默认0.0.0.0:21117
 
 
 agent.exe -s 192.168.93.217 -u asdf -p 1234
@@ -51,3 +51,6 @@ agent.exe -s 192.168.93.217 -u asdf -p 1234
  ![](https://github.com/YDHCUI/rustdesk/blob/main/images/2.png)
 
  ![](https://github.com/YDHCUI/rustdesk/blob/main/images/3.png)
+ 
+ ![](https://github.com/YDHCUI/rustdesk/blob/main/images/4.png)
+ 

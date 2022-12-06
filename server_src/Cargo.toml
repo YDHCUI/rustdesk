@@ -1,0 +1,15 @@
+[package]
+name = "server"
+version = "1.0.0"
+authors = ["root"]
+edition = "2018"
+description = "A remote control software."
+
+[dependencies]
+hbb_common = { path = "./libs/hbb_common" }
+lazy_static = "1.4"
+serde = "1.0"
+serde_derive = "1.0"
+async-channel = "1.6.1"
+uuid = { version = "0.8", features = ["v4"] }
+getopts = "0.2"

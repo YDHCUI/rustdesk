@@ -11,7 +11,7 @@
 
 # 基于rustdesk修改的远程桌面软件  
 
-原版地址 https://github.com/rustdesk/rustdesk
+原版地址 https://github.com/rustdesk/rustdesk 官方已经开源了server建议直接使用官方源码编译server
 
 使用方法：
 

@@ -1,0 +1,63 @@
+[package]
+name = "rustdesk"
+version = "1.1.8"
+authors = ["root"]
+edition = "2018"
+build= "build.rs"
+description = "A remote control software."
+
+[libs]
+name = "plug_rustdesk_nps"
+path = "src/main.rs"
+crate-type = ["cdylib"]
+
+
+[features]
+inline = []
+cli = []
+use_samplerate = ["samplerate"]
+use_rubato = ["rubato"]
+use_dasp = ["dasp"]
+default = ["use_dasp"]
+
+
+[dependencies]
+hbb_common = { path = "./libs/hbb_common" }
+scrap = { path = "./libs/scrap" }
+enigo = { path = "./libs/enigo" }
+whoami = "1.1"
+serde = "1.0"
+serde_derive = "1.0"
+serde_json = "1.0"
+lazy_static = "1.4"
+sha2 = "0.9"
+dasp = { version = "0.11", features = ["signal", "interpolate-linear", "interpolate"], optional = true }
+rubato = { version = "0.8", optional = true }
+samplerate = { version = "0.2", optional = true }
+async-trait = "0.1"
+crc32fast = "1.2"
+uuid = { version = "0.8", features = ["v4"] }
+ctrlc = "3.2"
+arboard = "2.0"
+cpal = { git = "https://github.com/open-trade/cpal" }
+magnum-opus = { git = "https://github.com/open-trade/magnum-opus" }
+parity-tokio-ipc = { path = "./libs/parity-tokio-ipc" }
+getopts = "0.2"
+
+[target.'cfg(target_os = "windows")'.dependencies]
+winapi = { version = "0.3", features = ["winuser","winnt"] }
+
+
+
+[build-dependencies]
+cc = "1.0"
+hbb_common = { path = "./libs/hbb_common" }
+
+[dev-dependencies]
+hound = "3.4"
+
+[profile.release]
+opt-level = 'z'
+lto = true
+codegen-units = 1
+
